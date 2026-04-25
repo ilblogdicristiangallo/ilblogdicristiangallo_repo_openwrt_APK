@@ -140,7 +140,7 @@ to verify the authenticity of the packages.</p>
 
 <div align="center">
   <p>Made with ❤️ by 
-    <a href="https://github.com/ilblogdicristiangallo">ilblogdicristiangallo</a>
+    <a href="https://www.ilblogdicristiangallo.com">ilblogdicristiangallo</a>
   </p>
 </div>
 
