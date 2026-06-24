@@ -1,4 +1,4 @@
-<h1>OpenWrt APK Repository by ilblogdicristiangallo OpenWrt 25.12.0 ></h1>
+<h1>OpenWrt APK Repository by ilblogdicristiangallo OpenWrt 25.12.x</h1>
 
 <div align="center">
   <img src="https://github.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/blob/main/repository-openwrt-by-ilblogdicristiangallo.png?raw=true" 
@@ -34,9 +34,9 @@
   </thead>
   <tbody>
     <tr>
-      <td>apn-web</td>
-      <td>1.0.3</td>
-      <td>Simple web interface for APN configuration</td>
+      <td>luci-app-apnweb</td>
+      <td>1.0.4</td>
+      <td>LuCI web interface for APN configuration (QMI, MBIM, ModemManager)</td>
     </tr>
     <tr>
       <td>telegramWrt</td>
@@ -67,11 +67,11 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 1:</strong> Add the repository to the APK sources list:</p>
 
-<pre>echo 'https://ilblogdicristiangallo.github.io/ilblogdicristiangallo_repo_openwrt_APK/packages.adb' >> /etc/apk/repositories.d/customfeeds.list</pre>
+<pre>echo 'https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main' >> /etc/apk/repositories</pre>
 
 <p><strong>Step 2:</strong> Download and install the repository public key:</p>
 
-<pre>wget https://github.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/raw/main/ilblogdicristiangallo.apkpub.pem \
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/ilblogdicristiangallo.apkpub.pem \
      -O /etc/apk/keys/ilblogdicristiangallo.apkpub.pem</pre>
 
 <p><strong>Step 3:</strong> Update the package index:</p>
@@ -80,8 +80,8 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 4:</strong> Install packages:</p>
 
-<pre># Install APN Web Interface
-apk add apn-web
+<pre># Install LuCI APN Web Interface
+apk add luci-app-apnweb
 
 # Install TelegramWrt Bot
 apk add telegramWrt</pre>
@@ -94,15 +94,15 @@ apk add telegramWrt</pre>
 without adding the repository permanently.
 Useful for quick tests or offline installations.</p>
 
-<p><strong>Install apn-web:</strong></p>
+<p><strong>Install luci-app-apnweb:</strong></p>
 
-<pre>wget https://github.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/raw/main/apn-web-1.0.3-r1.apk \
-     -O /tmp/apn-web.apk
-apk add --allow-untrusted /tmp/apn-web.apk</pre>
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-app-apnweb-1.0.4-r1.apk \
+     -O /tmp/luci-app-apnweb.apk
+apk add --allow-untrusted /tmp/luci-app-apnweb.apk</pre>
 
 <p><strong>Install telegramWrt:</strong></p>
 
-<pre>wget https://github.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/raw/main/telegramWrt-1.0.7-r1.apk \
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/telegramWrt-1.0.7-r1.apk \
      -O /tmp/telegramWrt.apk
 apk add --allow-untrusted /tmp/telegramWrt.apk</pre>
 
@@ -143,7 +143,3 @@ to verify the authenticity of the packages.</p>
     <a href="https://www.ilblogdicristiangallo.com">ilblogdicristiangallo</a>
   </p>
 </div>
-
-
-
-
