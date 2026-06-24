@@ -36,7 +36,7 @@
     <tr>
       <td>luci-app-apnweb</td>
       <td>1.0.4</td>
-      <td>LuCI web interface for APN configuration (QMI, MBIM, ModemManager)</td>
+      <td>LuCI graphical interface for APN configuration integrated in OpenWrt menu (Network → APN Configuration). Supports QMI, MBIM and ModemManager.</td>
     </tr>
     <tr>
       <td>telegramWrt</td>
@@ -67,7 +67,7 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 1:</strong> Add the repository to the APK sources list:</p>
 
-<pre>echo 'https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main' >> /etc/apk/repositories</pre>
+<pre>echo 'https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/packages.adb' >> /etc/apk/repositories.d/ilblogdicristiangallo.list</pre>
 
 <p><strong>Step 2:</strong> Download and install the repository public key:</p>
 
@@ -80,7 +80,7 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 4:</strong> Install packages:</p>
 
-<pre># Install LuCI APN Web Interface
+<pre># Install LuCI APN Web Interface (with graphical UI in OpenWrt menu)
 apk add luci-app-apnweb
 
 # Install TelegramWrt Bot
@@ -105,6 +105,25 @@ apk add --allow-untrusted /tmp/luci-app-apnweb.apk</pre>
 <pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/telegramWrt-1.0.7-r1.apk \
      -O /tmp/telegramWrt.apk
 apk add --allow-untrusted /tmp/telegramWrt.apk</pre>
+
+<hr>
+
+<h2>🖥️ luci-app-apnweb — Graphical Interface</h2>
+
+<p>After installation, the APN configuration page is accessible directly
+from the OpenWrt LuCI menu:</p>
+
+<pre>Network → APN Configuration</pre>
+
+<p>The interface supports:</p>
+<ul>
+  <li>✅ <strong>QMI</strong> — Qualcomm MSM Interface</li>
+  <li>✅ <strong>MBIM</strong> — Mobile Broadband Interface Model</li>
+  <li>✅ <strong>ModemManager</strong> — Universal modem management</li>
+  <li>✅ Italian and English language</li>
+  <li>✅ PIN management</li>
+  <li>✅ WAN restart and router reboot</li>
+</ul>
 
 <hr>
 
