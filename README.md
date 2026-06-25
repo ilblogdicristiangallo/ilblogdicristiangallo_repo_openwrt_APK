@@ -35,8 +35,8 @@
   <tbody>
     <tr>
       <td>luci-app-apnweb</td>
-      <td>1.0.4</td>
-      <td>LuCI graphical interface for APN configuration integrated in OpenWrt menu (Network → APN Configuration). Supports QMI, MBIM and ModemManager.</td>
+      <td>1.0.5</td>
+      <td>European APN Configurator with multi-language support (IT/EN), 37+ countries database with MNO and MVNO operators. Supports QMI, MBIM and ModemManager.</td>
     </tr>
     <tr>
       <td>telegramWrt</td>
@@ -80,7 +80,7 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 4:</strong> Install packages:</p>
 
-<pre># Install LuCI APN Web Interface (with graphical UI in OpenWrt menu)
+<pre># Install LuCI APN Web Interface (European Configurator)
 apk add luci-app-apnweb
 
 # Install TelegramWrt Bot
@@ -96,7 +96,7 @@ Useful for quick tests or offline installations.</p>
 
 <p><strong>Install luci-app-apnweb:</strong></p>
 
-<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-app-apnweb-1.0.4-r1.apk \
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-app-apnweb-1.0.5-r1.apk \
      -O /tmp/luci-app-apnweb.apk
 apk add --allow-untrusted /tmp/luci-app-apnweb.apk</pre>
 
@@ -108,22 +108,50 @@ apk add --allow-untrusted /tmp/telegramWrt.apk</pre>
 
 <hr>
 
-<h2>🖥️ luci-app-apnweb — Graphical Interface</h2>
+<h2>🖥️ luci-app-apnweb — European APN Configurator</h2>
 
 <p>After installation, the APN configuration page is accessible directly
 from the OpenWrt LuCI menu:</p>
 
 <pre>Network → APN Configuration</pre>
 
-<p>The interface supports:</p>
+<h3>✨ Main Features</h3>
+<ul>
+  <li>🌍 <strong>37+ European countries</strong> with country flags</li>
+  <li>📡 <strong>MNO + MVNO operators</strong> database (main and virtual operators)</li>
+  <li>🌐 <strong>Multi-language</strong> interface (Italian / English)</li>
+  <li>⚡ <strong>Auto-fill</strong> APN, IP type, authentication, username and password</li>
+  <li>📶 <strong>Hotspot APN</strong> separate configuration</li>
+  <li>🔄 <strong>WAN restart</strong> and router reboot from interface</li>
+  <li>🔐 <strong>SIM PIN</strong> management</li>
+</ul>
+
+<h3>🔌 Supported Connection Modes</h3>
 <ul>
   <li>✅ <strong>QMI</strong> — Qualcomm MSM Interface</li>
   <li>✅ <strong>MBIM</strong> — Mobile Broadband Interface Model</li>
-  <li>✅ <strong>ModemManager</strong> — Universal modem management</li>
-  <li>✅ Italian and English language</li>
-  <li>✅ PIN management</li>
-  <li>✅ WAN restart and router reboot</li>
+  <li>✅ <strong>ModemManager</strong> — Universal modem management (with 2G/3G/4G/5G selection)</li>
 </ul>
+
+<h3>🇪🇺 Supported Countries</h3>
+<p>Italy 🇮🇹 • France 🇫🇷 • Germany 🇩🇪 • Spain 🇪🇸 • Portugal 🇵🇹 • 
+United Kingdom 🇬🇧 • Ireland 🇮🇪 • Netherlands 🇳🇱 • Belgium 🇧🇪 • 
+Luxembourg 🇱🇺 • Switzerland 🇨🇭 • Austria 🇦🇹 • Denmark 🇩🇰 • 
+Sweden 🇸🇪 • Norway 🇳🇴 • Finland 🇫🇮 • Poland 🇵🇱 • Czech Republic 🇨🇿 • 
+Slovakia 🇸🇰 • Hungary 🇭🇺 • Romania 🇷🇴 • Bulgaria 🇧🇬 • Croatia 🇭🇷 • 
+Slovenia 🇸🇮 • Greece 🇬🇷 • Cyprus 🇨🇾 • Malta 🇲🇹 • Estonia 🇪🇪 • 
+Latvia 🇱🇻 • Lithuania 🇱🇹 • Albania 🇦🇱 • Serbia 🇷🇸 • 
+Bosnia and Herzegovina 🇧🇦 • Montenegro 🇲🇪 • North Macedonia 🇲🇰 • 
+Moldova 🇲🇩 • Ukraine 🇺🇦</p>
+
+<h3>📋 User Flow</h3>
+<ol>
+  <li>Select language (🇮🇹 Italiano / 🇬🇧 English)</li>
+  <li>Select connection mode (QMI / MODEMMANAGER / MBIM)</li>
+  <li>Select country from European list</li>
+  <li>Select operator (filter MNO / MVNO / All)</li>
+  <li>APN settings auto-filled — review and apply</li>
+</ol>
 
 <hr>
 
@@ -153,6 +181,30 @@ to verify the authenticity of the packages.</p>
       <code>--allow-untrusted</code> is required.</li>
   <li>The repository index is based on <code>packages.adb</code> format,
       compatible with OpenWrt 25.x APK tools.</li>
+  <li>After installation, refresh LuCI with <strong>Ctrl + F5</strong> to see the menu entry.</li>
+</ul>
+
+<hr>
+
+<h2>📜 Changelog</h2>
+
+<h3>luci-app-apnweb 1.0.5</h3>
+<ul>
+  <li>🆕 Complete redesign: European APN Configurator</li>
+  <li>🆕 Multi-language interface (IT/EN) with language-first selection</li>
+  <li>🆕 37+ European countries with flags</li>
+  <li>🆕 MNO + MVNO operators database with filters</li>
+  <li>🆕 Auto-fill APN, authentication, IP type, username, password</li>
+  <li>🆕 Separate hotspot/tethering APN field</li>
+  <li>🆕 External database (apn-database.js) for easy updates</li>
+  <li>🔧 Improved compact UI</li>
+</ul>
+
+<h3>luci-app-apnweb 1.0.4</h3>
+<ul>
+  <li>Initial LuCI menu integration</li>
+  <li>Support for QMI, MBIM, ModemManager</li>
+  <li>Italian operators list</li>
 </ul>
 
 <hr>
