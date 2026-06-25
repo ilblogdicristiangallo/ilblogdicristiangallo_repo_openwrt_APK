@@ -2,7 +2,7 @@
   "version": 2,
   "architecture": "all",
   "packages": {
-    "luci-app-apnweb": "1.0.4-r1",
+    "luci-app-apnweb": "1.0.5-r1",
     "telegramWrt": "1.0.7-r1"
   }
 }
