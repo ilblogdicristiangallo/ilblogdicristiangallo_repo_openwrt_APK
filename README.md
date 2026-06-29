@@ -43,6 +43,11 @@
       <td>1.0.7</td>
       <td>Modular Telegram bot for OpenWrt diagnostics and automation</td>
     </tr>
+    <tr>
+      <td>luci-app-teliasetup</td>
+      <td>1.0.0</td>
+      <td>LuCI app for ZTE MF286D that manages sequential FOTA firmware updates. Automatically detects the current version (B02-B12) and applies only the required updates. Bilingual web interface (IT/EN) with progress bar and live log.</td>
+    </tr>
   </tbody>
 </table>
 
