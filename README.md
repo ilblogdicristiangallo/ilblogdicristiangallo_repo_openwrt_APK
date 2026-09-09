@@ -39,14 +39,19 @@
       <td>European APN Configurator with multi-language support (IT/EN), 37+ countries database with MNO and MVNO operators. Supports QMI, MBIM and ModemManager.</td>
     </tr>
     <tr>
-      <td>telegramWrt</td>
-      <td>1.0.7</td>
-      <td>Modular Telegram bot for OpenWrt diagnostics and automation</td>
+      <td>luci-graphic-modemmanager</td>
+      <td>1.0.0-r2</td>
+      <td>Graphic LuCI interface for ModemManager (mmcli). Visual status, signal and modem control from the web UI.</td>
     </tr>
     <tr>
       <td>luci-app-teliasetup</td>
       <td>1.0.0</td>
       <td>LuCI app for ZTE MF286D that manages sequential FOTA firmware updates. Automatically detects the current version (B02-B12) and applies only the required updates. Bilingual web interface (IT/EN) with progress bar and live log.</td>
+    </tr>
+    <tr>
+      <td>telegramWrt</td>
+      <td>1.0.7</td>
+      <td>Modular Telegram bot for OpenWrt diagnostics and automation</td>
     </tr>
   </tbody>
 </table>
@@ -88,6 +93,12 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 <pre># Install LuCI APN Web Interface (European Configurator)
 apk add luci-app-apnweb
 
+# Install Graphic ModemManager LuCI interface
+apk add luci-graphic-modemmanager
+
+# Install Telia / ZTE MF286D FOTA helper
+apk add luci-app-teliasetup
+
 # Install TelegramWrt Bot
 apk add telegramWrt</pre>
 
@@ -104,6 +115,18 @@ Useful for quick tests or offline installations.</p>
 <pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-app-apnweb-1.0.5-r1.apk \
      -O /tmp/luci-app-apnweb.apk
 apk add --allow-untrusted /tmp/luci-app-apnweb.apk</pre>
+
+<p><strong>Install luci-graphic-modemmanager:</strong></p>
+
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-graphic-modemmanager-1.0.0-r2.apk \
+     -O /tmp/luci-graphic-modemmanager.apk
+apk add --allow-untrusted /tmp/luci-graphic-modemmanager.apk</pre>
+
+<p><strong>Install luci-app-teliasetup:</strong></p>
+
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-app-teliasetup-1.0.0-r1.apk \
+     -O /tmp/luci-app-teliasetup.apk
+apk add --allow-untrusted /tmp/luci-app-teliasetup.apk</pre>
 
 <p><strong>Install telegramWrt:</strong></p>
 
@@ -160,6 +183,18 @@ Moldova 🇲🇩 • Ukraine 🇺🇦</p>
 
 <hr>
 
+<h2>📡 luci-graphic-modemmanager — Graphic ModemManager</h2>
+
+<p>After installation, the graphic ModemManager page is available in LuCI.
+Refresh the browser with <strong>Ctrl + F5</strong> if the menu does not appear immediately.</p>
+
+<pre>apk add luci-graphic-modemmanager</pre>
+
+<p>Requires <strong>ModemManager</strong> on the router. Provides a graphic LuCI interface
+for <code>mmcli</code>: modem status, signal and basic control from the web UI.</p>
+
+<hr>
+
 <h2>🔑 About the Public Key</h2>
 
 <p>The public key is required only for <strong>Method 1</strong>
@@ -192,6 +227,12 @@ to verify the authenticity of the packages.</p>
 <hr>
 
 <h2>📜 Changelog</h2>
+
+<h3>luci-graphic-modemmanager 1.0.0-r2</h3>
+<ul>
+  <li>🆕 Graphic LuCI interface for ModemManager (mmcli)</li>
+  <li>🆕 Added to the signed APK repository index</li>
+</ul>
 
 <h3>luci-app-apnweb 1.0.5</h3>
 <ul>
