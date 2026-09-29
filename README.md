@@ -34,6 +34,11 @@
   </thead>
   <tbody>
     <tr>
+      <td>luci-app-speedtest</td>
+      <td>1.0.0-r1</td>
+      <td>Premium SpeedTest UI with Ookla-style SVG gauge, 10s smart ping stabilization, TCP slow-start bypass, real-time RFC3550 Jitter, dual Mbps/MBs metrics, and local test history.</td>
+    </tr>
+    <tr>
       <td>luci-app-apnweb</td>
       <td>1.0.5</td>
       <td>European APN Configurator with multi-language support (IT/EN), 37+ countries database with MNO and MVNO operators. Supports QMI, MBIM and ModemManager.</td>
@@ -90,7 +95,10 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 4:</strong> Install packages:</p>
 
-<pre># Install LuCI APN Web Interface (European Configurator)
+<pre># Install SpeedTest UI
+apk add luci-app-speedtest
+
+# Install LuCI APN Web Interface (European Configurator)
 apk add luci-app-apnweb
 
 # Install Graphic ModemManager LuCI interface
@@ -109,6 +117,12 @@ apk add telegramWrt</pre>
 <p>This method installs the package directly from the file,
 without adding the repository permanently.
 Useful for quick tests or offline installations.</p>
+
+<p><strong>Install luci-app-speedtest:</strong></p>
+
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-app-speedtest-1.0.0-r1.apk \
+     -O /tmp/luci-app-speedtest.apk
+apk add --allow-untrusted /tmp/luci-app-speedtest.apk</pre>
 
 <p><strong>Install luci-app-apnweb:</strong></p>
 
@@ -133,6 +147,25 @@ apk add --allow-untrusted /tmp/luci-app-teliasetup.apk</pre>
 <pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/telegramWrt-1.0.7-r1.apk \
      -O /tmp/telegramWrt.apk
 apk add --allow-untrusted /tmp/telegramWrt.apk</pre>
+
+<hr>
+
+<h2>⚡ luci-app-speedtest — SpeedTest UI</h2>
+
+<p>After installation, access the speed test interface directly from the LuCI menu:</p>
+
+<pre>Network → Speed Test</pre>
+
+<h3>✨ Main Features</h3>
+<ul>
+  <li>🎯 <strong>Ookla-Style Precision</strong> — Prevents browser queue saturation and hardware bottlenecks for accurate results.</li>
+  <li>⏱️ <strong>10-Second Smart Ping</strong> — Samples idle ping for 10s and extracts the lowest stable latency, trimming top 20% spikes. The gauge needle remains stationary at 0 during ping tests.</li>
+  <li>📉 <strong>RFC3550 Jitter Calculation</strong> — Accurate real-time jitter calculation without artificial spikes.</li>
+  <li>🚀 <strong>TCP Slow-Start Bypass</strong> — Discards the first 1.5s (warm-up phase) to calculate true peak throughput.</li>
+  <li>📊 <strong>Dual Bandwidth Metrics</strong> — Displays speeds in both <strong>Mbps</strong> (Megabits) and <strong>MB/s</strong> (Megabytes) simultaneously.</li>
+  <li>🎨 **Neon Dark UI & Responsive Gauge** — Modern SVG speedometer layout. Automatically adapts to a 2x2 grid on PC and a 1-column layout on mobile devices.</li>
+  <li>💾 <strong>Local Test History</strong> — Saves up to 10 test results locally on the router with a dedicated clear history button.</li>
+</ul>
 
 <hr>
 
@@ -227,6 +260,17 @@ to verify the authenticity of the packages.</p>
 <hr>
 
 <h2>📜 Changelog</h2>
+
+<h3>luci-app-speedtest 1.0.0-r1</h3>
+<ul>
+  <li>🆕 Initial release: Premium SpeedTest UI for OpenWrt LuCI</li>
+  <li>🆕 Ookla-style SVG gauge with real-time responsive design</li>
+  <li>🆕 Smart 10s idle ping stabilization algorithm (gauge stays at 0 during ping)</li>
+  <li>🆕 RFC3550 Jitter calculation & TCP slow-start bypass (1.5s warm-up discard)</li>
+  <li>🆕 Simultaneous Mbps and MB/s throughput calculation</li>
+  <li>🆕 Local test history storage with UI clear feature</li>
+  <li>🆕 Responsive layout: 2x2 grid on PC, 1-column on Mobile</li>
+</ul>
 
 <h3>luci-graphic-modemmanager 1.0.0-r2</h3>
 <ul>
