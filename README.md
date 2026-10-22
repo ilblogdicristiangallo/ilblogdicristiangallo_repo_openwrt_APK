@@ -82,7 +82,7 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 1:</strong> Add the repository to the APK sources list:</p>
 
-<pre>echo 'https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/packages.adb' >> /etc/apk/repositories.d/ilblogdicristiangallo.list</pre>
+<pre>echo 'https://github.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/blob/main/packages.adb' >> /etc/apk/repositories.d/ilblogdicristiangallo.list</pre>
 
 <p><strong>Step 2:</strong> Download and install the repository public key:</p>
 
