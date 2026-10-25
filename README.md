@@ -34,6 +34,11 @@
   </thead>
   <tbody>
     <tr>
+      <td>luci-graphic-smstool</td>
+      <td>1.1.0-r1</td>
+      <td>Graphic LuCI interface for SMS management with Dual-Backend support (sms_tool & ModemManager), contact manager, setup wizard, SMSC configuration, and automatic Telegram notification daemon.</td>
+    </tr>
+    <tr>
       <td>luci-app-speedtest</td>
       <td>1.0.0-r1</td>
       <td>Premium SpeedTest UI with Ookla-style SVG gauge, 10s smart ping stabilization, TCP slow-start bypass, real-time RFC3550 Jitter, dual Mbps/MBs metrics, and local test history.</td>
@@ -95,7 +100,10 @@ Packages can be updated anytime with <code>apk update</code>.</p>
 
 <p><strong>Step 4:</strong> Install packages:</p>
 
-<pre># Install SpeedTest UI
+<pre># Install SMS Tool UI & Telegram Forwarding Daemon
+apk add luci-graphic-smstool
+
+# Install SpeedTest UI
 apk add luci-app-speedtest
 
 # Install LuCI APN Web Interface (European Configurator)
@@ -117,6 +125,12 @@ apk add telegramWrt</pre>
 <p>This method installs the package directly from the file,
 without adding the repository permanently.
 Useful for quick tests or offline installations.</p>
+
+<p><strong>Install luci-graphic-smstool:</strong></p>
+
+<pre>wget https://raw.githubusercontent.com/ilblogdicristiangallo/ilblogdicristiangallo_repo_openwrt_APK/main/luci-graphic-smstool-1.1.0-r1.apk \
+     -O /tmp/luci-graphic-smstool.apk
+apk add --allow-untrusted /tmp/luci-graphic-smstool.apk</pre>
 
 <p><strong>Install luci-app-speedtest:</strong></p>
 
@@ -150,6 +164,24 @@ apk add --allow-untrusted /tmp/telegramWrt.apk</pre>
 
 <hr>
 
+<h2>📩 luci-graphic-smstool — SMS Tool & Telegram Forwarding</h2>
+
+<p>After installation, access the SMS interface directly from the LuCI menu:</p>
+
+<pre>Services → SMS Tool</pre>
+
+<h3>✨ Main Features</h3>
+<ul>
+  <li>🔄 <strong>Dual Backend Support</strong> — Native support for both <code>sms_tool</code> (QMI / Serial AT) and <code>ModemManager</code> (<code>mmcli</code>).</li>
+  <li>🧙‍♂️ <strong>Setup Wizard</strong> — Guided initial setup step-by-step with automatic serial port scanner and live AT port test.</li>
+  <li>💬 <strong>SMS Inbox & Sending Modal</strong> — Read, preview, and send SMS with support for SIM (SM) and Modem Memory (ME) storages.</li>
+  <li>📱 <strong>Contacts Directory</strong> — Integrated phonebook to add, edit, and delete contacts for quick messaging.</li>
+  <li>⚙️ <strong>SMSC Management</strong> — Read and modify SMS Center (SMSC) number with smart fallback to <code>/dev/ttyUSB2</code> port.</li>
+  <li>🤖 <strong>Telegram Notification Daemon</strong> — Automatic background daemon to forward received SMS directly to Telegram with emojis and duplicate filtering mechanism.</li>
+</ul>
+
+<hr>
+
 <h2>⚡ luci-app-speedtest — SpeedTest UI</h2>
 
 <p>After installation, access the speed test interface directly from the LuCI menu:</p>
@@ -163,7 +195,7 @@ apk add --allow-untrusted /tmp/telegramWrt.apk</pre>
   <li>📉 <strong>RFC3550 Jitter Calculation</strong> — Accurate real-time jitter calculation without artificial spikes.</li>
   <li>🚀 <strong>TCP Slow-Start Bypass</strong> — Discards the first 1.5s (warm-up phase) to calculate true peak throughput.</li>
   <li>📊 <strong>Dual Bandwidth Metrics</strong> — Displays speeds in both <strong>Mbps</strong> (Megabits) and <strong>MB/s</strong> (Megabytes) simultaneously.</li>
-  <li>🎨 **Neon Dark UI & Responsive Gauge** — Modern SVG speedometer layout. Automatically adapts to a 2x2 grid on PC and a 1-column layout on mobile devices.</li>
+  <li>🎨 <strong>Neon Dark UI & Responsive Gauge</strong> — Modern SVG speedometer layout. Automatically adapts to a 2x2 grid on PC and a 1-column layout on mobile devices.</li>
   <li>💾 <strong>Local Test History</strong> — Saves up to 10 test results locally on the router with a dedicated clear history button.</li>
 </ul>
 
@@ -260,6 +292,15 @@ to verify the authenticity of the packages.</p>
 <hr>
 
 <h2>📜 Changelog</h2>
+
+<h3>luci-graphic-smstool 1.1.0-r1</h3>
+<ul>
+  <li>🆕 Complete LuCI Web Interface for SMS management with Dual-Backend (sms_tool + ModemManager)</li>
+  <li>🆕 Automated Telegram forwarding background daemon with custom check intervals</li>
+  <li>🆕 Interactive step-by-step Setup Wizard with port scanning and live AT testing</li>
+  <li>🆕 Integrated contacts manager and SMSC read/write fallback features</li>
+  <li>🆕 Released for OpenWrt 25.x APK repository</li>
+</ul>
 
 <h3>luci-app-speedtest 1.0.0-r1</h3>
 <ul>
